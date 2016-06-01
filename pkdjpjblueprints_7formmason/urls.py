@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from main.views import CustomFormView
+from main.views import HomePageView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$',CustomFormView.as_view(),name='custom_view')
+    url(r'^$',HomePageView.as_view(),name='home'),
+    url(r'^form/(?P<form_pk>\d+)/$',CustomFormView.as_view(),name='custom_form'),
 ]
