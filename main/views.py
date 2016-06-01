@@ -54,7 +54,7 @@ class CustomFormView(FormView):
             return None
 
 class FormResponseListView(ListView):
-    template_name = "form_response.html"
+    template_name = "form_responses.html"
     def get_context_data(self, **kwargs):
         ctx=super(FormResponseListView,self).get_context_data(**kwargs)
         ctx["form"]=self.get_form()
